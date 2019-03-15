@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+D:\单片机\2018 器材\1621 3A5 142个\K01-E2\02 软1302时钟\practice.uv2
+Project File Date:  01/22/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling test.c...
+TEST.C(17): error C202: 'P4': undefined identifier
+TEST.C(18): error C202: 'P4': undefined identifier
+TEST.C(19): error C202: 'P4': undefined identifier
+LCD-1621.C(48): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(54): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(56): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(57): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(60): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(66): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(67): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(68): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(71): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(75): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(87): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(88): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(89): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(92): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(99): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(100): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(101): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(104): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(117): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(118): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(119): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(122): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(132): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(133): error C202: 'D1201_WR': undefined identifier
+LCD-1621.C(134): error C202: 'D1201_DAT': undefined identifier
+LCD-1621.C(159): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(174): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(175): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(190): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(201): error C202: 'D1201_CS': undefined identifier
+LCD-1621.C(205): error C202: 'D1201_CS': undefined identifier
+V1302.C(106): error C187: not an lvalue
+V1302.C(110): error C187: not an lvalue
+V1302.C(114): error C187: not an lvalue
+V1302.C(118): error C187: not an lvalue
+V1302.C(129): error C187: not an lvalue
+V1302.C(133): error C187: not an lvalue
+TEST.C(87): error C187: not an lvalue
+TEST.C(88): error C187: not an lvalue
+TEST.C(89): error C187: not an lvalue
+Target not created
+Build target 'Target 1'
+compiling test.c...
+linking...
+Program Size: data=27.1 xdata=0 code=931
+creating hex file from "practice"...
+"practice" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling test.c...
+linking...
+Program Size: data=27.1 xdata=0 code=931
+creating hex file from "practice"...
+"practice" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling test.c...
+linking...
+Program Size: data=27.1 xdata=0 code=931
+creating hex file from "practice"...
+"practice" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling test.c...
+linking...
+Program Size: data=27.1 xdata=0 code=934
+creating hex file from "practice"...
+"practice" - 0 Error(s), 0 Warning(s).

@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\桌面\新器材\1621 3A5 142个\09 降低功耗\practice.uv2
+Project File Date:  01/22/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling test.c...
+linking...
+Program Size: data=21.2 xdata=0 code=1698
+creating hex file from "practice"...
+"practice" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling test.c...
+linking...
+Program Size: data=21.2 xdata=0 code=1698
+creating hex file from "practice"...
+"practice" - 0 Error(s), 0 Warning(s).

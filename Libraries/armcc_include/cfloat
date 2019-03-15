@@ -1,0 +1,28 @@
+/*
+ * C++ header for C header float.h
+ * Copyright 1997 ARM Limited. All rights reserved.
+ */
+
+/*
+ * RCS $Revision: 177844 $
+ * Checkin $Date: 2012-11-21 11:51:12 +0000 (Wed, 21 Nov 2012) $
+ * Revising $Author: pwright $
+ */
+
+#ifndef __cfloat
+#define __cfloat
+#define __ARMCLIB_VERSION 5060002
+
+  #define __FLOAT_NO_EXPORTS 1
+  #include <float.h>
+  #undef __FLOAT_NO_EXPORTS
+
+  #undef __float_h  // later inclusion of float.h must do using std::*
+  #ifdef __EDG_IMPLICIT_USING_STD
+    /* Implicitly include a using directive for the STD namespace when this
+       preprocessing flag is TRUE. */
+       using namespace ::std;
+  #endif /* ifdef __EDG_IMPLICIT_USING_STD */
+  
+#endif
+

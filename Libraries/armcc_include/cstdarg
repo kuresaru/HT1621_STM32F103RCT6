@@ -1,0 +1,28 @@
+/*
+ * C++ header for C header stdarg.h
+ * Copyright 1997 ARM Limited. All rights reserved.
+ */
+
+/*
+ * RCS $Revision: 177844 $
+ * Checkin $Date: 2012-11-21 11:51:12 +0000 (Wed, 21 Nov 2012) $
+ * Revising $Author: pwright $
+ */
+
+#ifndef __cstdarg
+#define __cstdarg
+#define __ARMCLIB_VERSION 5060002
+
+  #define __STDARG_NO_EXPORTS 1
+  #include <stdarg.h>
+  #undef __STDARG_NO_EXPORTS
+
+  #undef __stdarg_h  // later inclusion of stdarg.h must do using std::*
+  #ifdef __EDG_IMPLICIT_USING_STD
+    /* Implicitly include a using directive for the STD namespace when this
+       preprocessing flag is TRUE. */
+       using namespace ::std;
+  #endif /* ifdef __EDG_IMPLICIT_USING_STD */
+  
+#endif /* __cstdarg */
+

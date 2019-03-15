@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/Libraries/armcc_include/**",
+                "${workspaceFolder}/Libraries/inc/*",
+                "${workspaceFolder}/CMSIS/CM3/CoreSupport/*",
+                "${workspaceFolder}/CMSIS/CM3/DeviceSupport/ST/STM32F10x/*"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

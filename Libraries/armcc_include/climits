@@ -1,0 +1,19 @@
+/*
+ * C++ header for C header limits.h
+ * Copyright 1997 ARM Limited. All rights reserved.
+ */
+
+/*
+ * RCS $Revision: 177844 $
+ * Checkin $Date: 2012-11-21 11:51:12 +0000 (Wed, 21 Nov 2012) $
+ * Revising $Author: pwright $
+ */
+
+#ifndef __climits
+#define __climits
+#define __ARMCLIB_VERSION 5060002
+
+#include <limits.h>
+
+#endif
+

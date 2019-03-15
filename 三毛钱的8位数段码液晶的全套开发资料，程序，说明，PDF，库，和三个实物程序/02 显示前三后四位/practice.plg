@@ -1,0 +1,15 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+D:\单片机\2018 器材\1621 3A5 142个\02 显示前三后四位\practice.uv2
+Project File Date:  07/31/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling test.c...
+linking...
+Program Size: data=13.1 xdata=0 code=890
+creating hex file from "practice"...
+"practice" - 0 Error(s), 0 Warning(s).

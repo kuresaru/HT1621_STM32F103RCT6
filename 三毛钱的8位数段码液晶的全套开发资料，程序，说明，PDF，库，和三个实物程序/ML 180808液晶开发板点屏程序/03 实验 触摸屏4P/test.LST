@@ -1,0 +1,133 @@
+C51 COMPILER V7.06   TEST                                                                  08/28/2018 15:29:32 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE TEST
+OBJECT MODULE PLACED IN test.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE test.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          /*
+   2          测试7寸独立触摸屏
+   3          
+   4          
+   5          经测试，如果4P转接板FPC朝上，2.54排针朝自己，那么，从左向右
+   6          左1 2.2  x0 x+
+   7          左2 1.1  y1 y-
+   8          左3 1.0  x1 x-
+   9          右  2.3  y0 y+
+  10          
+  11          这个触摸屏的x座标很准，Y座标范围小，而且不对称，左半屏分辨率特别小
+  12          
+  13          2018-8-28
+  14          
+  15          */
+  16          
+  17          #define WEI 11
+  18          
+  19          #include<reg52.h> //包含头文件，一般情况不需要改动，头文件包含特殊功能寄存器的定义
+  20          #include<intrins.h>
+  21          
+  22          //D1201控制位（液晶模块接口定义，根据自已的需要更改）
+  23          sbit D1201_DAT=P3^7;
+  24          sbit D1201_CS=P3^4;     //lower enable
+  25          sbit D1201_WR=P3^6;     //rising edge
+  26          sbit D1201_RD=P3^5;
+  27          
+  28          #include "LCD-1621.c"     //3+5位段式液晶无背光 0.5元 LCD-V5.3 5v供电效果最好
+  29          //#include "DelayMs_15F104E6.h"    //15F104 6M延时
+  30          
+  31          sbit key1=P1^0;
+  32          sbit key2=P1^1;
+  33          sbit key3=P1^2;
+  34          
+  35          //#include "ADC.h"
+  36          
+  37          #include "getxy.h"
+  38          
+  39          
+  40          
+  41          /*------------------------------------------------
+  42           uS延时函数，含有输入参数 unsigned char t，无返回值
+  43           unsigned char 是定义无符号字符变量，其值的范围是
+  44           0~255 这里使用晶振12M，精确延时请使用汇编,大致延时
+  45           长度如下 T=tx2+5 uS 
+  46          ------------------------------------------------*/
+  47          void DelayUs2x(unsigned char t)
+  48          {   
+  49   1       while(--t);
+  50   1      }
+  51          
+  52          void DelayMs(unsigned int t)
+  53          {
+  54   1      while(--t)
+  55   1      {
+C51 COMPILER V7.06   TEST                                                                  08/28/2018 15:29:32 PAGE 2   
+
+  56   2      DelayUs2x(225);
+  57   2      DelayUs2x(225);
+  58   2      }
+  59   1      }
+  60          
+  61          void DelayS(unsigned char s)
+  62          {
+  63   1      while(s--)
+  64   1       {
+  65   2        DelayMs(250);  DelayMs(250);
+  66   2        DelayMs(250);  DelayMs(250);
+  67   2       }
+  68   1      
+  69   1      }
+  70          
+  71          
+  72          
+  73          
+  74          
+  75          
+  76          /*------------------------------------------------
+  77                               main
+  78          ------------------------------------------------*/
+  79          void main()
+  80          {
+  81   1      unsigned char x,y;
+  82   1      
+  83   1      D1621_Init();
+  84   1      
+  85   1      cls();
+  86   1      
+  87   1      print(1,21,0);
+  88   1      print(5,21,0);
+  89   1      
+  90   1      while(1)
+  91   1      {
+  92   2      getxy(&x,&y);
+  93   2      
+  94   2      print(2,x/100,0);
+  95   2      print(3,x%100/10,0);
+  96   2      print(4,x%10,0);
+  97   2      
+  98   2      print(6,y/100,0);
+  99   2      print(7,y%100/10,0);
+ 100   2      print(8,y%10,0);
+ 101   2      
+ 102   2      DelayS(3);
+ 103   2      }
+ 104   1      
+ 105   1      }
+ 106          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    687    ----
+   CONSTANT SIZE    =     88    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+C51 COMPILER V7.06   TEST                                                                  08/28/2018 15:29:32 PAGE 3   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

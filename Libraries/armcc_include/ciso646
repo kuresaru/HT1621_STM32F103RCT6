@@ -1,0 +1,20 @@
+/*
+ * C++ header for C header iso646.h
+ * Copyright 1997,1999 ARM Limited. All rights reserved.
+ */
+
+/*
+ * RCS $Revision: 177844 $
+ * Checkin $Date: 2012-11-21 11:51:12 +0000 (Wed, 21 Nov 2012) $
+ * Revising $Author: pwright $
+ */
+
+/* 'and', 'and_eq', 'bitand', 'bitor', 'compl', 'not', 'not_eq', 'or',
+ * 'or_eq', 'xor' and 'xor_eq' are keywords in C++
+ */
+
+#ifndef __ciso646
+#define __ciso646
+#define __ARMCLIB_VERSION 5060002
+#endif
+

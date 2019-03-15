@@ -1,0 +1,152 @@
+C51 COMPILER V7.06   TEST                                                                  08/24/2018 17:52:14 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE TEST
+OBJECT MODULE PLACED IN test.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE test.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          /*
+   2          3+5无背光段码屏
+   3          
+   4          STC15F2K40S2 LQFP44 11.0592MHz 条件下测试 PASS
+   5          程序运行了一夜，正常，稳定
+   6          
+   7          2018/7/25
+   8          
+   9          */
+  10          
+  11          #define WEI 11
+  12          
+  13          #include<reg52.h> //包含头文件，一般情况不需要改动，头文件包含特殊功能寄存器的定义
+  14          #include<intrins.h>
+  15          
+  16          //D1201控制位（液晶模块接口定义，根据自已的需要更改）
+  17          sbit D1201_DAT=P3^7;
+  18          sbit D1201_CS=P3^4;     //lower enable
+  19          sbit D1201_WR=P3^6;     //rising edge
+  20          sbit D1201_RD=P3^5;
+  21          
+  22          #include "LCD-1621.c"     //3+5位段式液晶无背光 0.5元 LCD-V5.3 5v供电效果最好
+  23          //#include "DelayMs_15F104E6.h"    //15F104 6M延时
+  24          
+  25          sfr P3M0        =   0xB2;   //0000,0000 端口3模式寄存器0
+  26          sbit key1=P1^0;
+  27          sbit key2=P1^1;
+  28          sbit key3=P1^2;
+  29          
+  30          
+  31          
+  32          
+  33          
+  34          
+  35          /*------------------------------------------------
+  36           uS延时函数，含有输入参数 unsigned char t，无返回值
+  37           unsigned char 是定义无符号字符变量，其值的范围是
+  38           0~255 这里使用晶振12M，精确延时请使用汇编,大致延时
+  39           长度如下 T=tx2+5 uS 
+  40          ------------------------------------------------*/
+  41          void DelayUs2x(unsigned char t)
+  42          {   
+  43   1       while(--t);
+  44   1      }
+  45          
+  46          void DelayMs(unsigned int t)
+  47          {
+  48   1      while(--t)
+  49   1      {
+  50   2      DelayUs2x(225);
+  51   2      DelayUs2x(225);
+  52   2      
+  53   2      }
+  54   1      
+  55   1      }
+C51 COMPILER V7.06   TEST                                                                  08/24/2018 17:52:14 PAGE 2   
+
+  56          
+  57          
+  58          
+  59          
+  60          
+  61          
+  62          
+  63          
+  64          /*------------------------------------------------
+  65                               main
+  66          ------------------------------------------------*/
+  67          void main()
+  68          {
+  69   1      unsigned char h,m,s; //时分秒
+  70   1      
+  71   1      
+  72   1      D1621_Init();
+  73   1      cls();
+  74   1      
+  75   1      h=8;
+  76   1      m=0;
+  77   1      s=0;
+  78   1      
+  79   1      while(1)
+  80   1      {
+  81   2      print(1,h/10,0);
+  82   2      print(2,h%10,0);
+  83   2      
+  84   2      print(3,22,0);
+  85   2      
+  86   2      print(4,m/10,0);
+  87   2      print(5,m%10,0);
+  88   2      
+  89   2      print(6,22,0);
+  90   2      
+  91   2      print(7,s/10,0);
+  92   2      print(8,s%10,0);
+  93   2      
+  94   2      DelayMs(250);
+  95   2      DelayMs(250);
+  96   2      DelayMs(250);
+  97   2      
+  98   2      
+  99   2      if(!key1) h++;
+ 100   2      if(!key2) m++;
+ 101   2      if(!key3) m--;
+ 102   2      
+ 103   2      s++;
+ 104   2      
+ 105   2      if(s>60) s=0;
+ 106   2      if(m>59) m=59;
+ 107   2      if(h>23) h=0;
+ 108   2      
+ 109   2      if(s==60)
+ 110   2       {
+ 111   3        s=0;
+ 112   3        m++;
+ 113   3        if(m==60)
+ 114   3        {
+ 115   4         m=0;
+ 116   4         h++;
+ 117   4         if(h==24) h=0;
+C51 COMPILER V7.06   TEST                                                                  08/24/2018 17:52:14 PAGE 3   
+
+ 118   4        }
+ 119   3      
+ 120   3       }
+ 121   2      
+ 122   2      
+ 123   2      }
+ 124   1      }
+ 125          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    567    ----
+   CONSTANT SIZE    =     88    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

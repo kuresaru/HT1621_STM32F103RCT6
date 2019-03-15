@@ -1,0 +1,13 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\桌面\1621老王段码屏\1621无背光的3加5位段码屏\05 显示1到8\practice.uv2
+Project File Date:  01/22/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling test.c...
+C:\KEIL\C51\INC\INTRINS.H(12): error C129: missing ';' before 'extern'
+Target not created

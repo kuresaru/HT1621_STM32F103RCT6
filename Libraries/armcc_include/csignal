@@ -1,0 +1,28 @@
+/*
+ * C++ header for C header signal.h
+ * Copyright 1997 ARM Limited. All rights reserved.
+ */
+
+/*
+ * RCS $Revision: 177844 $
+ * Checkin $Date: 2012-11-21 11:51:12 +0000 (Wed, 21 Nov 2012) $
+ * Revising $Author: pwright $
+ */
+
+#ifndef __csignal
+#define __csignal
+#define __ARMCLIB_VERSION 5060002
+
+  #define __SIGNAL_NO_EXPORTS 1
+  #include <signal.h>
+  #undef __SIGNAL_NO_EXPORTS
+
+  #undef __signal_h  // later inclusion of signal.h must do using std::*
+  #ifdef __EDG_IMPLICIT_USING_STD
+    /* Implicitly include a using directive for the STD namespace when this
+       preprocessing flag is TRUE. */
+       using namespace ::std;
+  #endif /* ifdef __EDG_IMPLICIT_USING_STD */
+  
+#endif /* __csignal */
+
